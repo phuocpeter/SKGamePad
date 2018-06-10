@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		983B1E1F20CDE3D3006EFE94 /* SKGamePad.h in Headers */ = {isa = PBXBuildFile; fileRef = 983B1E1D20CDE3D3006EFE94 /* SKGamePad.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		983B1E2620CDE40E006EFE94 /* SKColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983B1E2520CDE40E006EFE94 /* SKColorButton.swift */; };
+		983B1E2820CDE47A006EFE94 /* SKDirectionalPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983B1E2720CDE47A006EFE94 /* SKDirectionalPad.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		983B1E1A20CDE3D3006EFE94 /* SKGamePad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SKGamePad.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		983B1E1D20CDE3D3006EFE94 /* SKGamePad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKGamePad.h; sourceTree = "<group>"; };
 		983B1E1E20CDE3D3006EFE94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		983B1E2520CDE40E006EFE94 /* SKColorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKColorButton.swift; sourceTree = "<group>"; };
+		983B1E2720CDE47A006EFE94 /* SKDirectionalPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKDirectionalPad.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +52,8 @@
 			children = (
 				983B1E1D20CDE3D3006EFE94 /* SKGamePad.h */,
 				983B1E1E20CDE3D3006EFE94 /* Info.plist */,
+				983B1E2520CDE40E006EFE94 /* SKColorButton.swift */,
+				983B1E2720CDE47A006EFE94 /* SKDirectionalPad.swift */,
 			);
 			path = SKGamePad;
 			sourceTree = "<group>";
@@ -95,6 +101,7 @@
 				TargetAttributes = {
 					983B1E1920CDE3D3006EFE94 = {
 						CreatedOnToolsVersion = 9.4;
+						LastSwiftMigration = 0940;
 					};
 				};
 			};
@@ -130,6 +137,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				983B1E2820CDE47A006EFE94 /* SKDirectionalPad.swift in Sources */,
+				983B1E2620CDE40E006EFE94 /* SKColorButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +268,7 @@
 		983B1E2320CDE3D3006EFE94 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -268,6 +278,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = SKGamePad/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -276,6 +287,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ttp.SKGamePad;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -284,6 +296,7 @@
 		983B1E2420CDE3D3006EFE94 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -293,6 +306,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = SKGamePad/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
