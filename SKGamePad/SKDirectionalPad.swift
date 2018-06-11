@@ -9,7 +9,7 @@
 import SpriteKit
 
 /** Delegate for notification of directional button touch events. */
-protocol SKDirectionalPadDelegate {
+public protocol SKDirectionalPadDelegate {
     /**
      Notifies the event from the up button.
      - parameters:
@@ -36,9 +36,9 @@ protocol SKDirectionalPadDelegate {
 /**
  A node containing the directional pad.
  */
-class SKDirectionalPad: SKNode {
+public class SKDirectionalPad: SKNode {
     /** Delegate for notification of button touch events. */
-    var delegate: SKDirectionalPadDelegate?
+    public var delegate: SKDirectionalPadDelegate?
     
     var padColor: UIColor
     var padSize: CGSize
@@ -49,7 +49,7 @@ class SKDirectionalPad: SKNode {
     var rightPad: SKColorButton!
     
     /** Initiliazes from NSCoder. */
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         padColor = UIColor.lightGray
         padSize = CGSize(width: 50, height: 50)
         super.init(coder: aDecoder)
@@ -62,7 +62,7 @@ class SKDirectionalPad: SKNode {
         - color: the color of the button.
         - size: the size of the individual button.
      */
-    init(padColor color: UIColor, padSize size: CGSize) {
+    public init(padColor color: UIColor, padSize size: CGSize) {
         self.padColor = color
         self.padSize = size
         super.init()
@@ -98,7 +98,7 @@ class SKDirectionalPad: SKNode {
      - parameters:
      - visibleSize: the CGSize object of the visible size of the device screen.
      */
-    func setPositionToBottomLeft(view: SKView) {
+    public func setPositionToBottomLeft(view: SKView) {
         let visibleSize = view.bounds.size
         /** Insets specifically for new iPhone. */
         var insets: UIEdgeInsets {
@@ -117,7 +117,7 @@ class SKDirectionalPad: SKNode {
 
 // Redirects button events to delegate
 extension SKDirectionalPad: SKColorButtonTouchesListener {
-    func buttonTouched(button: SKColorButton, withState state: SKColorButtonTouchEvent) {
+    public func buttonTouched(button: SKColorButton, withState state: SKColorButtonTouchEvent) {
         // Identifies the button by name.
         guard let name = button.name else { return }
         // Compares the button name with the enumeration.
@@ -138,7 +138,7 @@ extension SKDirectionalPad: SKColorButtonTouchesListener {
 }
 
 /** Convenience enumeration of conventional directional buttons. */
-enum SKDirectionalPadButtons: String {
+public enum SKDirectionalPadButtons: String {
     /** Pointing upward button. */
     case upButton
     /** Pointing downward button. */

@@ -11,15 +11,15 @@ import SpriteKit
 /**
  A retangular color sprite that register touch events.
  */
-class SKColorButton: SKSpriteNode {
+public class SKColorButton: SKSpriteNode {
     /** The touch listener of the sprite. */
-    var listener: SKColorButtonTouchesListener?
+    public var listener: SKColorButtonTouchesListener?
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
-    override init(texture: SKTexture?, color: UIColor, size: CGSize) {
+    override public init(texture: SKTexture?, color: UIColor, size: CGSize) {
         super.init(texture: nil, color: color, size: size)
         self.isUserInteractionEnabled = true
     }
@@ -31,7 +31,7 @@ class SKColorButton: SKSpriteNode {
         - color: the color of the button.
         - size: the size of the button.
      */
-    convenience init(name: String, color: UIColor, size: CGSize) {
+    convenience public init(name: String, color: UIColor, size: CGSize) {
         self.init(texture: nil, color: color, size: size)
         self.name = name
     }
@@ -40,28 +40,28 @@ class SKColorButton: SKSpriteNode {
 
 // Touch events handling.
 extension SKColorButton {
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if touches.first != nil {
             listener?.buttonTouched(button: self, withState: .begun)
         }
         super.touchesBegan(touches, with: event)
     }
     
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override public func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if touches.first != nil {
             listener?.buttonTouched(button: self, withState: .ended)
         }
         super.touchesEnded(touches, with: event)
     }
     
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override public func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         if touches.first != nil {
             listener?.buttonTouched(button: self, withState: .moved)
         }
         super.touchesMoved(touches, with: event)
     }
     
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override public func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         if touches.first != nil {
             listener?.buttonTouched(button: self, withState: .cancelled)
         }
@@ -70,7 +70,7 @@ extension SKColorButton {
 }
 
 /** Touch event states of the button. */
-enum SKColorButtonTouchEvent {
+public enum SKColorButtonTouchEvent {
     /** The button is touched. */
     case begun
     /** The button is released. */
@@ -82,7 +82,7 @@ enum SKColorButtonTouchEvent {
 }
 
 /** Listener for button's touch event notifications. */
-protocol SKColorButtonTouchesListener {
+public protocol SKColorButtonTouchesListener {
     /**
      Notifies that the button is touched.
      - parameters:
